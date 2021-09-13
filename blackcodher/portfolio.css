@@ -1,0 +1,288 @@
+.border {
+    font-family: 'Roboto Mono', monospace;
+}
+
+body 
+{
+    margin: 1em;
+    padding: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+.header {
+    padding: 20px;
+    text-align: center;
+    background: grey;
+    color: whitesmoke;
+    font-size: 30px;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 0.5em;
+}
+
+
+.skillscontainer {
+    border: solid 1em lightgray;
+    font-size: 20px;
+    text-decoration: underline;
+    
+
+}
+
+.tagline { 
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+
+.abouthaleema {
+    font-size: 30px;
+    font-family: 'Roboto Mono', monospace;
+    color: #b76e79; 
+}
+
+a {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: grey;
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-gap: 1em;
+}
+
+
+
+
+.grid > div {
+    background: whitesmoke;
+    padding: 1em;
+    border: black solid ;
+    border-width: thin;
+    
+}
+
+.grid > div:nth-child(2) {
+    background: none;
+    border: none;
+
+    
+}
+
+.grid > div:nth-child(3) {
+    background: lightgray;
+}
+.grid > div:nth-child(4) {
+    background: palevioletred;
+}
+
+.grid > div:nth-child(5) {
+    background:white;
+    border: grey;
+
+}
+
+.nested {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-auto-rows: 150px;
+    grid-gap: 1em;
+    align-items: center;
+;
+}
+
+img {
+    border: 1px solid grey;
+    width: 100%;
+    height: 100%;
+}
+
+.nested > div {
+    border: grey 1px solid;
+    /* box-sizing: content-box; */
+    font-family: 'Roboto Mono', monospace;
+    font-size: 25px;
+    color: black;
+    background-color:#b76e79;  
+    font-weight: bolder;  
+    height: 100%;
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grid > div img {
+
+max-width: 350px;
+max-height: 350px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.aboutme {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.abouthaleema {
+    margin: 1em;
+    display: block;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.myimage {
+    size: 10em;
+    align-items: center;
+    display: block;
+    border-radius: 50%;
+
+    
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .container {
+    padding: 10px 50px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color:lightgray;
+    border: 4px solid black;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+  
+  /* Full-width containers */
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+  /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+  /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      left: 15px;
+    }
+  
+  /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
